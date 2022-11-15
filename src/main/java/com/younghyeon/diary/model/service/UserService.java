@@ -2,16 +2,22 @@ package com.younghyeon.diary.model.service;
 
 import com.younghyeon.diary.model.dto.User;
 
+import java.util.HashMap;
+import java.util.List;
+
 public interface UserService {
+    // 사용자 목록
+    List<User> userList(HashMap<String, String> params);
+
     // 사용자 등록
-    int insertUser(User user);
+    void createUser(User user);
 
     // 사용자 수정
-    void updateUser(User user);
+    void modifyUser(User user);
+
+    // 사용자 상세
+    User userDetail(String id);
 
     // 사용자 삭제
-    int deleteUser(User user);
-
-    // 사용자 검색(id & pw)
-    User searchUser(User user);
+    void removeUser(String id);
 }
