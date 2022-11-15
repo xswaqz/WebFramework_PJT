@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> userList(HashMap<String, String> params) {
-        userDao.userList(params);
+        return userDao.userList(params);
     }
 
     @Override
