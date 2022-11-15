@@ -13,23 +13,23 @@ public class DiaryServiceImpl implements DiaryService {
     private DiaryDao diaryDao;
 
     @Override
-    public void writeBoard(Diary diary) {
+    public void writeDiary(Diary diary) {
         diaryDao.insertDiary(diary);
     }
 
     @Override
-    public List<Diary> getBoardList(HashMap<String, String> params) {
+    public List<Diary> getDiaryList(HashMap<String, String> params) {
         return diaryDao.selectList(params);
     }
 
     @Override
-    public Diary getBoard(int id) {
+    public Diary getDiary(int id) {
         this.updateViewCnt(id);
         return diaryDao.selectOne(id);
     }
 
     @Override
-    public boolean modifyBoard(Diary diary) {
+    public boolean modifyDiary(Diary diary) {
         Diary originDiary = diaryDao.selectOne(diary.getId());
         originDiary.setTitle(diary.getTitle());
         originDiary.setContent(diary.getContent());
@@ -37,7 +37,7 @@ public class DiaryServiceImpl implements DiaryService {
     }
 
     @Override
-    public boolean removeBoard(int id) {
+    public boolean removeDiary(int id) {
         return diaryDao.deleteDiary(id) == 1;
     }
 
