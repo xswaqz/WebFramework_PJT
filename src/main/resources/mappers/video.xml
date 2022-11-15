@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.younghyeon.diary.model.dao.VideoDao">
+
+    <resultMap id="videoMap" type="video">
+        <id column="id" property="videoId" />
+        <result column="title" property="title" />
+        <result column="url" property="url" />
+        <result column="exercise_part" property="exercisePart" />
+        <result column="content" property="content" />
+        <result column="thumbnail" property="thumbnail" />
+        <result column="view_cnt" property="viewCnt" />
+    </resultMap>
+
+    <insert id="insertVideo" parameterType="Video">
+        INSERT INTO video VALUES
+        (0, #{title}, #{url}, #{exercisePart}, #{content}, #{thumbnail}, #{viewCnt})
+    </insert>
+
+    <update id="updateVideo" parameterType="Video">
+        UPDATE video
+        SET
+        title = #{title},
+        url = #{url},
+        exercise_part = #{exercisePart},
+        content = #{content},
+        thumbnail = #{thumbnail},
+        view_cnt = #{viewCnt}
+        WHERE id = #{videoId}
+    </update>
+
+    <delete id="deleteVideo" parameterType="int">
+        DELETE FROM video WHERE id = #{videoId}
+    </delete>
+
+    <select id="selectOne" resultMap="videoMap" parameterType="int">
+        SELECT id, title, url, exercise_part, content, thumbnail, view_cnt
+        FROM video
+        WHERE id = #{videoId}
+    </select>
+
+    <select id="selectList" resultMap="videoMap" parameterType="java.util.HashMap">
+        SELECT id, title, url, exercise_part, content, thumbnail, view_cnt
+        FROM video
+        <!-- 제목 검사 -->
+        <if test="mode == 1">
+            WHERE title LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        <!-- 내용 검사 -->
+        <if test="mode == 2">
+            WHERE content LIKE '%${keyword}%'
+        </if>
+        <!-- 제목+내용 검사 -->
+        <if test="mode == 3">
+            WHERE title LIKE CONCAT('%', #{keyword}, '%')
+            OR content LIKE '%${keyword}%'
+        </if>
+        <if test="mode == 4">
+            WHERE exercisePart LIKE '%${keyword}%'
+        </if>
+    </select>
+</mapper>
