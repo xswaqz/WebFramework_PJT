@@ -14,12 +14,12 @@
     </resultMap>
 
     <insert id="insertDiary" parameterType="Diary">
-        INSERT INTO board VALUES
+        INSERT INTO diary VALUES
         (0, #{writer}, #{title}, #{content}, #{viewCnt}, now())
     </insert>
 
-    <update id="updateBoard" parameterType="Diary">
-        UPDATE board
+    <update id="updateDiary" parameterType="Diary">
+        UPDATE diary
         SET
         title = #{title},
         writer = #{writer},
@@ -29,20 +29,20 @@
     </update>
 
     <delete id="deleteDiary" parameterType="int">
-        DELETE FROM board WHERE id = #{id}
+        DELETE FROM diary WHERE id = #{id}
     </delete>
 
     <select id="selectOne" resultMap="diaryMap" parameterType="int">
         SELECT id, title, writer, content, view_cnt,
         date_format(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date
-        FROM board
+        FROM diary
         WHERE id = #{id}
     </select>
 
     <select id="selectList" resultMap="diaryMap" parameterType="java.util.HashMap">
         SELECT id, title, writer, content, view_cnt,
         date_format(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date
-        FROM board
+        FROM diary
         <!-- 제목 검사 -->
         <if test="mode == 1">
             WHERE title LIKE CONCAT('%', #{keyword}, '%')
