@@ -24,7 +24,7 @@
         title = #{title},
         writer = #{writer},
         content = #{content},
-        view_cnt #{viewCnt},
+        view_cnt = #{viewCnt}
         WHERE id = #{id}
     </update>
 
