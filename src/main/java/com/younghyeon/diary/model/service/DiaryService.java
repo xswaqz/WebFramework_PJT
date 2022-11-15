@@ -19,5 +19,4 @@ public interface DiaryService {
     //게시글 조회 증가
     void updateViewCnt(int id);
 
-
 }
