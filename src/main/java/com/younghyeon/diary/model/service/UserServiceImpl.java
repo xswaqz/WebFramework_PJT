@@ -14,29 +14,28 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-
     @Override
     public List<User> userList(HashMap<String, String> params) {
-        return null;
+        return userDao.userList(params);
     }
 
     @Override
     public void createUser(User user) {
-
+        userDao.insertUser(user);
     }
 
     @Override
     public void modifyUser(User user) {
-
+        userDao.updateUser(user);
     }
 
     @Override
     public User userDetail(String id) {
-        return null;
+        return userDao.userDetail(id);
     }
 
     @Override
     public void removeUser(String id) {
-
+        userDao.deleteUser(id);
     }
 }
