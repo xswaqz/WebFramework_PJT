@@ -21,6 +21,4 @@ public interface UserService {
     // 사용자 삭제
     void removeUser(String id);
 
-    // 사용자 검색
-//    List<User> searchUser(String id);
 }
