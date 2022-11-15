@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younghyeon.diary.model.dao.DiaryDao">
 
-    <resultMap id="diaryMap" type="Diary">
+    <resultMap id="diaryMap" type="diary">
         <id column="id" property="id" />
         <result column="writer" property="writer" />
         <result column="title" property="title" />

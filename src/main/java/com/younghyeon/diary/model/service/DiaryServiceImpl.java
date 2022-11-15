@@ -45,12 +45,8 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     public void updateViewCnt(int id) {
-        System.out.println("0000000");
         Diary diary = diaryDao.selectOne(id);
-        System.out.println("1111111111111");
         diary.setViewCnt(diary.getViewCnt()+1);
-        System.out.println("2222222");
         diaryDao.updateDiary(diary);
-        System.out.println("33333333");
     }
 }
