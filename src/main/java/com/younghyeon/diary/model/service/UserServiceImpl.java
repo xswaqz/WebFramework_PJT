@@ -16,11 +16,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> userList(HashMap<String, String> params) {
-        return userDao.userList(params);
+        userDao.userList(params);
     }
 
     @Override
-    public void createUser(User user) {
+    public void registUser(User user) {
         userDao.insertUser(user);
     }
 
@@ -38,4 +38,8 @@ public class UserServiceImpl implements UserService {
     public void removeUser(String id) {
         userDao.deleteUser(id);
     }
+
+//    @Override
+//    public List<User> searchUser(String id) {
+//    }
 }

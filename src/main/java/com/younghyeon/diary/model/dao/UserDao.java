@@ -20,6 +20,4 @@ public interface UserDao {
 
     // 사용자 삭제
     void deleteUser(String id);
-    // 사용자 검색
-    List<User> searchUser(String id);
 }
