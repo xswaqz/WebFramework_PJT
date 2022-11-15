@@ -12,7 +12,6 @@ public class DiaryServiceImpl implements DiaryService {
     @Autowired
     private DiaryDao diaryDao;
 
-
     @Override
     public void writeBoard(Diary diary) {
         diaryDao.insertDiary(diary);
