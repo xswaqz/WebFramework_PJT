@@ -12,33 +12,40 @@ public class DiaryServiceImpl implements DiaryService {
     @Autowired
     private DiaryDao diaryDao;
 
+
     @Override
-    public List<Diary> selectList(HashMap<String, String> params) {
-        return null;
+    public void writeBoard(Diary diary) {
+        diaryDao.insertDiary(diary);
     }
 
     @Override
-    public void writeDiary(Diary diary) {
-
+    public List<Diary> getBoardList(HashMap<String, String> params) {
+        return diaryDao.selectList(params);
     }
 
     @Override
-    public int updateDiary(Diary diary) {
-        return 0;
+    public Diary getBoard(int id) {
+        this.updateViewCnt(id);
+        return diaryDao.selectOne(id);
     }
 
     @Override
-    public Diary selectOne(int id) {
-        return null;
+    public boolean modifyBoard(Diary diary) {
+        Diary originDiary = diaryDao.selectOne(diary.getId());
+        originDiary.setTitle(diary.getTitle());
+        originDiary.setContent(diary.getContent());
+        return diaryDao.updateDiary(originDiary) == 1;
     }
 
     @Override
-    public int deleteDiary(int id) {
-        return 0;
+    public boolean removeBoard(int id) {
+        return diaryDao.deleteDiary(id) == 1;
     }
 
     @Override
     public void updateViewCnt(int id) {
-
+        Diary diary = diaryDao.selectOne(id);
+        diary.setViewCnt(diary.getViewCnt()+1);
+        diaryDao.updateDiary(diary);
     }
 }
