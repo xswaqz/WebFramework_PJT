@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.younghyeon.diary.model.dao.DiaryDao">
 
-    <resultMap id="diaryMap" type="diary">
+    <resultMap id="diaryMap" type="Diary">
         <id column="id" property="id" />
         <result column="writer" property="writer" />
         <result column="title" property="title" />
@@ -24,7 +24,7 @@
         title = #{title},
         writer = #{writer},
         content = #{content},
-        view_cnt #{viewCnt},
+        view_cnt = #{viewCnt}
         WHERE id = #{id}
     </update>
 
@@ -36,7 +36,7 @@
         SELECT id, title, writer, content, view_cnt,
         date_format(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date
         FROM diary
-        WHERE id = ${id}
+        WHERE id = #{id}
     </select>
 
     <select id="selectList" resultMap="diaryMap" parameterType="java.util.HashMap">
