@@ -36,7 +36,7 @@
         SELECT id, title, writer, content, view_cnt,
         date_format(reg_date, '%Y-%m-%d %H:%i:%s') as reg_date
         FROM diary
-        WHERE id = #{id}
+        WHERE id = ${id}
     </select>
 
     <select id="selectList" resultMap="diaryMap" parameterType="java.util.HashMap">
