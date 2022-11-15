@@ -19,8 +19,6 @@ public interface UserService {
     User userDetail(String id);
 
     // 사용자 삭제
-    void removeUser(String id);
+    boolean removeUser(String id);
 
-    // 사용자 검색
-//    List<User> searchUser(String id);
 }
