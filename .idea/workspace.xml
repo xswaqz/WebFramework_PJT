@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c82f814-b648-4c40-9f0c-59cb209ffee8" name="Changes" comment="application.properties update">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-11-15__10_06__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-11-15__10_06__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/younghyeon/diary/config/DBConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/younghyeon/diary/config/DBConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/younghyeon/diary/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/younghyeon/diary/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/younghyeon/diary/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/younghyeon/diary/config/WebConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,8 @@
       <updated>1668473470949</updated>
       <workItem from="1668473472330" duration="904000" />
       <workItem from="1668474385474" duration="913000" />
-      <workItem from="1668475307097" duration="298000" />
+      <workItem from="1668475307097" duration="473000" />
+      <workItem from="1668475788907" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="application.properties update">
       <created>1668474631481</created>
